@@ -1,11 +1,6 @@
 pipeline{
     agent any
     stages{
-        stage('Checkout git'){
-            steps{
-                git branch: 'main', url: 'https://github.com/JulioMolinaDevOps/pipeline-maven-java.git'
-            }
-        }
         stage('Building'){
             steps{
                 echo 'Building...'
@@ -27,7 +22,7 @@ pipeline{
         stage('Deploy'){
             steps{
                 echo 'Deploying...'
-                sh 'java -cp target/your-app-1.0-SNAPSHOT.jar com.apasoft.ToUpper "example text"'
+                sh 'java -cp target/your-app-1.0-SNAPSHOT.jar com.apasoft.ToUpper "${texto}"'
             }
         }
     }
