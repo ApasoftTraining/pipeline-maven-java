@@ -5,19 +5,19 @@ pipeline{
         }
     }
     stages{
-        stage('Building'){
+        stage('Building desdde desarrollo'){
             steps{
                 echo 'Building....'
                 sh 'mvn clean compile'
             }
         }
-        stage('Testing'){
+        stage('Testing desdde desarrollo'){
             steps{
                 echo 'Testing...'
                 sh 'mvn test'
             }
         }
-        stage('Package'){
+        stage('Package desdde desarrollo'){
             steps{
                 echo 'Packaging...'
                 sh 'mvn package'
